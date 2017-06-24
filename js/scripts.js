@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 
 console.log(pingPongArr)
-
+$("#answer").empty();
 pingPongArr.forEach(function(list) {
     $("#answer").append("<li>" + list + "</li>");
   });

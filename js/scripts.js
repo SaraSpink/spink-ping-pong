@@ -11,13 +11,35 @@ var PingPong = function(pingPongInput) {
 };
 
 
+
 $(document).ready(function() {
   $("form#ping-pong").submit(function(event) {
     event.preventDefault();
     var pingPongInput = parseInt($("input#pingPongNum").val());
     var result = PingPong(pingPongInput);
     var pingPongArr = []
+    for (i = 1; i <= pingPongInput; i++) {
+        pingPongArr.push(i);
+    }
+    
+    $.each(pingPongArr,function(index,value) {
+      if (value % 15 === 0) {
+        pingPongArr[index] = "PingPong!";
+      }
+      if (value % 3 === 0 && pingPongInput % 5 !== 0) {
+        pingPongArr[index] = "Ping";
+      }
+      if (value % 5 === 0 && pingPongInput % 3 !== 0) {
+        pingPongArr[index] = "Pong";
+      }
+    });
+console.log(pingPongArr)
+pingPongArr.forEach(function(list) {
 
-    $("#result").show();
+    $("#answer").append("<li>" + list + "</li>");
+
+  });
+
+    // $(".nyNum").show();
   });
 });

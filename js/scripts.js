@@ -1,4 +1,4 @@
-var PingPong = function(pingPongInput) {
+var pingPong = function(pingPongInput) {
   if (pingPongInput % 15 === 0) {
     $(".myNum").text("PingPong!");
   } else if ((pingPongInput % 3 === 0) && (pingPongInput % 5 !== 0)) {
@@ -14,6 +14,7 @@ $(document).ready(function() {
   $("form#ping-pong").submit(function(event) {
     event.preventDefault();
     var pingPongInput = parseInt($("input#pingPongNum").val());
+    var result = pingPong(pingPongInput);
     var pingPongArr = []
     for (i = 1; i <= pingPongInput; i++) {
         pingPongArr.push(i);

@@ -13,10 +13,16 @@ $(document).ready(function() {
     var pingPongInput = parseInt($("input#pingPongNum").val());
     var result = PingPong(pingPongInput);
 
-    // $(".myNum").text(pingPongInput);
+    $(".myNum").text(pingPongInput);
 
-    // if (!result) {
-    //   $(".not").text("not");
+    if (!result) {
+      $(".myNum").text(pingPongInput);
+    } else {
+      $(".myNum").text("PingPong!")
+    }
+
+
+      // $(".not").text("not");
     // } else {
     //   $(".not").text("");
     // }
